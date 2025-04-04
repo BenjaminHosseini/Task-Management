@@ -1,0 +1,288 @@
+/* General Body and Layout */
+body {
+  background-color: hsl(210, 20%, 96%);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: hsl(210, 18%, 25%);
+  line-height: 1.6;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.to-do-list {
+  max-width: 950px;
+  margin: 40px auto; 
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: transparent; 
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px; 
+  padding: 15px 0; 
+  background-image: linear-gradient(to right, hsl(210, 36%, 30%), hsl(210, 36%, 50%));
+  font-weight: bold;
+  border-bottom: 5px solid hsl(210, 36%, 40%);
+}
+
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px; 
+  margin-bottom: 40px; 
+}
+
+.add-button {
+  padding: 5px 10px; 
+  font-size: 1.5rem; 
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 90px;
+  height: 65px;
+  background-color: hsl(210, 60%, 60%);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.priority-select{
+  padding: 5px 10px; 
+  font-weight: 600;
+  border: none;
+  width: 100px;
+  height: 65px;
+}
+
+.add-button:hover {
+  background-color: hsl(210, 60%, 50%);
+  transform: scale(1.05);
+}
+
+ 
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px; 
+  overflow-y: auto; 
+}
+
+
+.task-item {
+  background-color: hsl(0, 0%, 100%);
+  padding: 25px; 
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  font-size: 2rem; 
+  font-weight: 700;
+}
+
+.task-item:hover {
+  transform: scale(1.02);
+}
+
+.task-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; 
+  flex-wrap: nowrap;
+}
+
+
+.priority {
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 3px 16px; 
+  font-size: 1.1rem;
+  width: 100px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.priority.high {
+  background-color: hsl(0, 80%, 60%);
+  color: hsl(0, 0%, 100%);
+}
+
+.priority.medium {
+  background-color: hsl(60, 50%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
+.priority.low {
+  background-color: hsl(120, 60%, 40%);
+  color: hsl(0, 0%, 100%);
+}
+
+.status {
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 2px 8px; 
+  font-size: 1.2rem; 
+  width: 150px; 
+  text-align: center;
+  margin-top: 20px; 
+}
+
+.status.in-progress {
+  background-color: hsl(30, 100%, 60%);
+  color: hsl(0, 0%, 100%);
+}
+
+.status.complete {
+  background-color: hsl(120, 50%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button, .delete-button {
+  padding: 6px 15px;
+  font-size: 1.2rem; 
+  border-radius: 8px;
+  color: hsl(0, 0%, 100%);
+  width: 120px; 
+  text-align: center; 
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.edit-button {
+  background-color: hsl(30, 100%, 60%);
+}
+
+.edit-button:hover {
+  background-color: hsl(30, 100%, 50%);
+}
+
+.delete-button {
+  background-color: hsl(0, 80%, 50%);
+}
+
+.delete-button:hover {
+  background-color: hsl(0, 80%, 40%);
+}
+
+/* Priority Select Dropdown */
+.priority-select {
+  font-size: 1.3rem; 
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: white;
+  background-color: hsl(210, 60%, 60%);
+  appearance: none; 
+  cursor: pointer;
+}
+
+.priority-select:hover {
+  background-color: hsl(210, 60%, 50%);
+  transform: scale(1.05);
+}
+
+/* Edit Priority Button */
+.edit-priority {
+  background-color: hsl(210, 60%, 50%);
+  color: hsl(0, 0%, 100%);
+  padding: 8px 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-priority:hover {
+  background-color: hsl(210, 60%, 40%);
+  transform: scale(1.05);
+}
+
+/* Edit Status Button */
+.edit-status {
+  background-color: hsl(60, 50%, 50%);
+  color: hsl(0, 0%, 100%);
+  padding: 8px 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-status:hover {
+  background-color: hsl(60, 50%, 40%);
+  transform: scale(1.05);
+}
+
+.update-button, .cancel-button {
+  background-color: hsl(210, 60%, 50%);
+  color: hsl(0, 0%, 100%);
+  padding: 8px 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.update-button .cancel-button:hover {
+  background-color: hsl(210, 60%, 40%);
+  transform: scale(1.05);
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column; 
+  gap: 25px; 
+  padding: 8px 15px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+
+
+
+
